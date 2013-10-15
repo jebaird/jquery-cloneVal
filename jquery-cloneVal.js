@@ -48,7 +48,7 @@
 		//create a string like event.ns event2.ns
 		eventString = settings.events.join( "." + settings.eventNS + " " ) + "." + settings.eventNS;
 
-		return this.each( function( ) {
+		return this.each( function(){
 			
 			var targets = settings.targets, 
 				i = targets.length, 
