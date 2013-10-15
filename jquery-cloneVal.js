@@ -69,8 +69,5 @@
 
 	}
 
-	$( 'form' ).linkInputVals( {
-		targets: [ [ ".select", ".target" ], [ "[name=a]", "[name=b]", "[name=c]" ] ]
-	} );
 
 })( jQuery );
