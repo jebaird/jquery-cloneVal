@@ -35,6 +35,11 @@
 	$.fn.cloneVal = function( options ) {
 		var defaults = {
 			eventNS: "cloneVal",
+			/*
+			 * if you dont need full support for ie9 try 
+			 * setting this option to [ "input" ]
+			 * https://developer.mozilla.org/en-US/docs/Web/Reference/Events/input
+			 */
 			events: [ "change", "blur", "keyup" ],
 			targets: [
 			/*
