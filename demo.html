@@ -9,7 +9,7 @@
 				<option>two</option>
 			</select>
 
-			<input type="text" name="a">
+			<input type="text" name="a" value="copy me to destination">
 			<br>
 			destination
 			<br>
@@ -30,6 +30,7 @@
 		<script src="jquery-cloneVal.js" type="text/javascript"></script>
 		<script>
 			$( 'form' ).cloneVal( {
+                cloneOnInit: true,
 				targets: [ 
 					[ ".select", ".target" ], 
 					[ "[name=a]", "[name=b]", "[name=c]" ] 
