@@ -34,6 +34,9 @@
 
 	$.fn.cloneVal = function( options ) {
 		var defaults = {
+			// copy the values from source to destination on init of plugin
+			cloneOnInit: false,
+			
 			eventNS: "cloneVal",
 			/*
 			 * if you dont need full support for ie9 try 
@@ -60,14 +63,22 @@
 				$this = $( this );
 			
 			while( i-- ) {
-				var set = targets[ i ];
-				$this.on( eventString, set[ 0 ], set.slice( 1 ).join( "," ), function( e ) {
+				
+				var set = targets[ i ],
+					source = set[ 0 ],
+					dest = set.slice( 1 ).join( "," );
+
+				$this.on( eventString, source, dest, function( e ) {
 					
 					$this.find( e.data )
 						.val( $( this ).val() )
-						//matche up the values
-						.trigger( e.type )
+						//match up the values
+						.trigger( e.type );
 				})
+				if( settings.cloneOnInit ){
+
+					$this.find( source ).trigger( settings.events[ 0 ] );
+				}
 			}
 
 		});
